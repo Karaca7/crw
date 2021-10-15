@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <button>oluştur</button>
+
+
+    </form> 
+
+    
+    <br>
+
+    <form action="xmlwebr" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <input type="file" name="xmlfile">
+    
+        <input type="submit" value="yükle">
+    </form>
+
+
+    {%  for i in data %}
+    <h5><a>-{{i.common}}</a></h5>
+    
+    
+    <br>
+
+{% endfor %}
+
+</body>
+</html>

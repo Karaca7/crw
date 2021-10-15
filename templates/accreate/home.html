@@ -1,0 +1,23 @@
+
+
+
+
+{% load socialaccount %}
+<html>
+  <head>
+    <title>Main</title>
+  </head>
+  <body>
+  
+  {% if user.is_authenticated %}
+  <p> {{ user.username }} !</p>
+  <a href="{% url  'xmlwebr' %}">Xml işlemleri için</a>
+ 
+  {% else %}
+  <h1>Uygulama</h1>
+  <br>
+  <a href="{% provider_login_url 'google' %}">Google ile bağlanın</a>
+  {% endif %}
+
+  </body>
+</html>
